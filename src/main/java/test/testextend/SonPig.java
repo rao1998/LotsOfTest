@@ -6,4 +6,9 @@ public class SonPig extends FatherPig {
         super.eat();
         System.out.println("son pig eat...");
     }
+
+    /*@Override
+    public void testFWXSF() {
+        super.testFWXSF();
+    }*/
 }

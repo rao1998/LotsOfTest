@@ -10,7 +10,7 @@ public class TestThumbnails {
         //压缩速度、格式支持？
         try {
             long start = System.currentTimeMillis();
-            FileInputStream fis = new FileInputStream("D:\\raoxing5\\Desktop\\图片1.jpg");
+            FileInputStream fis = new FileInputStream("classpath:图片1.jpg");
 //            Thumbnails.of(fis).scale(1f).outputQuality(0.25d).toFile("");
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             Thumbnails.of(fis).scale(1f).outputQuality(0.25d).toOutputStream(byteArrayOutputStream);

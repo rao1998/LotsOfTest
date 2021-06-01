@@ -5,4 +5,8 @@ public class FatherPig {
         System.out.println("father pig eat...");
     }
 
+    protected void testFWXSF(){
+        System.out.println("父类输出方法");
+    }
+
 }

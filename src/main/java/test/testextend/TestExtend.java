@@ -6,5 +6,7 @@ public class TestExtend {
         fatherPig.eat();
         SonPig sonPig = new SonPig();
         sonPig.eat();
+
+        //sonPig.testFWXSF();
     }
 }
