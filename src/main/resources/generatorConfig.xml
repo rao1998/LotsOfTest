@@ -61,30 +61,16 @@
         </javaClientGenerator>
 
         <!-- 数据表进行生成操作 tableName:表名; domainObjectName:对应的DO -->
-        <table tableName="app_diagnosis_spot_rate_area" domainObjectName="AppDiagnosisSpotRateArea"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
+        <table tableName="jd_logistics_bill" domainObjectName="JDLogisticsBill"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
         </table>
-        <table tableName="app_diagnosis_spot_rate_overview" domainObjectName="AppDiagnosisSpotRateOverview"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
+        <table tableName="jd_logistics_bill_detail" domainObjectName="JDLogisticsBillDetail"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
         </table>
-        <table tableName="app_diagnosis_turnover_area" domainObjectName="AppDiagnosisTurnoverArea"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-        </table>
-        <table tableName="app_diagnosis_turnover_overview" domainObjectName="AppDiagnosisTurnoverOverview"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-        </table>
-        <table tableName="app_diagnosis_turnover_structure" domainObjectName="AppDiagnosisTurnoverStructure"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-        </table>
+
     </context>
 </generatorConfiguration>
