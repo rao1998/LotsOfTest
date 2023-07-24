@@ -27,44 +27,6 @@ public class DWTest {
     CloseableHttpClient client = HttpClients.createDefault();
 
     @Test
-    public void test01() {
-        List<String> filterDate = new ArrayList<>();
-        try {
-            String accessToken = "";
-            Map<String, Object> map = new HashMap<>();
-            map.put("app_id", "ee_hd4gcVgr1QVdeaHn");
-            map.put("app_secret", "HnGOFHIoP6bKjo7PWTzxN5LOqyNzprsX");
-            String tokenResponse = HttpUtil.post("http://t1-ee-opendata-api.shizhuang-inc.net/api/access_token", JSON.toJSONString(map));
-            JSONObject tokenObject = JSONObject.parseObject(tokenResponse);
-            if (tokenObject != null && (Integer) tokenObject.get("code") == 0 && tokenObject.get("data") != null) {
-                accessToken = (String) JSONObject.parseObject(tokenObject.get("data").toString()).get("access_token");
-            }
-            if (StringUtils.isNotBlank(accessToken)) {
-                URIBuilder builder = new URIBuilder("http://t1-ee-opendata-api.shizhuang-inc.net/api/system/calendar");
-                builder.addParameter("start_time", "2023-01-19T00:00:00+08:00");
-                builder.addParameter("end_time", "2023-01-28T00:00:00+08:00");
-                HttpGet request = new HttpGet(builder.build());
-                request.setHeader("accessToken", accessToken);
-                CloseableHttpResponse response = client.execute(request);
-                //0-节假日 1-工作日 2-小休日 3-休息日
-                if (response != null) {
-                    JSONObject jsonObject = JSON.parseObject(EntityUtils.toString(response.getEntity()));
-                    if (jsonObject != null && jsonObject.get("code") != null && (Integer) jsonObject.get("code") == 0 && jsonObject.get("data") != null) {
-                        List<CalendarDTO> calendarList = JSON.parseObject(
-                                JSONObject.parseObject(jsonObject.get("data").toString()).get("list").toString(),
-                                new TypeReference<List<CalendarDTO>>() {
-                                });
-                        filterDate = calendarList.stream().filter(data -> data.getDateType() == 0).map(CalendarDTO::getDate).collect(Collectors.toList());
-                    }
-                }
-            }
-        } catch (Exception e) {
-            System.out.println();
-        }
-        System.out.println(JSON.toJSONString(filterDate));
-    }
-
-    @Test
     public void test02() {
         int count = -1;
         while (true){
